@@ -1,0 +1,161 @@
+    body {
+      background-color: #ffffff;
+      color: #000000;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .board {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      width: 100%;
+      max-width: 480px;
+      margin: 20px auto;
+      border: 2px solid #000;
+    }
+
+    .square {
+      width: 60px;
+      height: 60px;
+      border: 1px solid #555;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 20px;
+      user-select: none;
+      transition: background 0.2s;
+    }
+
+    .light-square {
+      background-color: #f0d9b5;
+    }
+    .dark-square {
+      background-color: #b58863;
+    }
+    .visited {
+      background-color: #4caf50 !important;
+      color: white;
+    }
+    .revisited {
+      background-color: #f44336 !important;
+      color: white;
+    }
+    .knight {
+      font-size: 24px;
+      animation: pop 0.3s ease;
+    }
+
+    @keyframes pop {
+      0% {
+        transform: scale(0.8);
+        opacity: 0.6;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .celebration {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.9);
+      color: #000;
+      font-size: 3rem;
+      z-index: 999;
+      animation: fadein 0.8s ease forwards;
+    }
+
+    @keyframes fadein {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .sidebar-controls {
+      background-color: #f8f9fa;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      margin: 0 auto 20px;
+      max-width: 480px;
+    }
+
+    .btn-custom {
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      padding: 10px 20px;
+      font-weight: 600;
+      background: linear-gradient(135deg, #28a745, #218838);
+      border: none;
+      color: #fff;
+      transition: transform 0.1s, box-shadow 0.1s;
+    }
+
+    .btn-custom:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn-custom:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      background: linear-gradient(135deg, #218838, #1e7e34);
+    }
+
+    #undoMove.btn-custom {
+      background: linear-gradient(135deg, #ffc107, #e0a800);
+      color: #212529;
+    }
+
+    #undoMove.btn-custom:hover {
+      background: linear-gradient(135deg, #e0a800, #c69500);
+    }
+
+    #undoMove.btn-custom:active {
+      background: linear-gradient(135deg, #c69500, #aa8000);
+    }
+
+    .form-check-input {
+      width: 2.5em;
+      height: 1.4em;
+      cursor: pointer;
+      accent-color: #28a745;
+      transition: accent-color 0.2s;
+    }
+
+    .form-check-input:checked {
+      accent-color: #dc3545;
+    }
+
+    .form-check-label {
+      margin-left: 0.5em;
+      font-weight: 500;
+    }
+
+    @media (max-width: 576px) {
+      .square {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+      }
+      .board {
+        max-width: 320px;
+      }
+      .btn-custom {
+        padding: 8px 16px;
+        font-size: 14px;
+      }
+    }
